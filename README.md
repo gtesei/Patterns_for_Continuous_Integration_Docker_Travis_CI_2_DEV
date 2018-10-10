@@ -4,7 +4,7 @@
 
 ![Conceptual Schema](./img/end-to-end-flow.png)
 
-__The “Docker repo” pattern__: create two separate Git repositories: one for Docker release and another for software development. This keeps the Docker-specific code isolated from the actual software. Developers can continue working on the source software as usual, while the production Docker image is developed separately.
+__The “Docker repo” pattern__: _create two separate Git repositories: one for Docker release and another for software development. This keeps the Docker-specific code isolated from the actual software. Developers can continue working on the source software as usual, while the production Docker image is developed separately_
 
 This repository is an example of the Git repository for software development. 
 
@@ -15,14 +15,13 @@ This repository is an example of the Git repository for software development.
 ## Dockerfile 
  
 ```docker
-FROM debian
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends cowsay \
-    && rm -rf /var/lib/apt/lists/*
-ENV PATH "$PATH:/usr/games"
+FROM python:3.6
 
-ENTRYPOINT ["cowsay"]
-CMD ["Hello, World!"]
+COPY . /myproject
+WORKDIR /myproject
+RUN pip install -e .
+
+CMD ["myproject", "run"]
 ```
 
 ## .travis.yml  
