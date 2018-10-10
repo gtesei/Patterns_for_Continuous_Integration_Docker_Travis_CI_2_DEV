@@ -2,9 +2,9 @@ language: python
 cache: pip
 matrix:
   include:
-    - sudo: required
-      - python: '3.5'
-      - python: '3.6'
+    - name: "Deploy on Docker"
+      sudo: required
+      python: '3.6'
       services:
       - docker
       env:
