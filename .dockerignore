@@ -1,0 +1,15 @@
+# Don't copy temporary Python build files
+build/
+dist/
+*.egg
+*.egg-info/
+**/*.pyc
+**/__pycache__/
+
+# Don't copy any Git things
+.git/
+.gitignore
+
+# Don't copy in the Dockerfile itself or related files
+Dockerfile
+.dockerignore
