@@ -14,7 +14,6 @@ matrix:
       before_install:
       - sudo apt-get update
       - sudo apt-get install docker.io
-      - sudo apt-get install -y -o Dpkg::Options::="--force-confold" docker-engine
       install: []
       before_script:
       - docker pull "${IMAGE_NAME}:develop" || true
