@@ -72,44 +72,6 @@ deploy:
     tags: true
 ```
 
-
-## How to encrypt password of Docker Hub on .travis.yml 
-
-![Howto Encrypt Password](./img/pwd_enc.PNG)
-
-```yml
-sudo: required
-services:
-- docker
-env:
-  global:
-  - REGISTRY_USER=gtesei
-  - secret: "<something long>"
-  - secure: W8cjk1MzKPXbs+u1PVlP1WPyKOKon0PEeVSf790tV6VtOlExRAK3NPEyFzZ3jjkTsenB/sspBawIJlqjPBQAqeeGz2I7vwWRj1UxawbmHaxaodoclMx3APbg8iW/+qH4bm0M2uyb9F6JWY8azD/j7GKIW8otyIb8s+9qu+wFR9HMuxFuvy8MPABgTk3r6/qflSwWd0QZkia3UqAauFAHCtxTZSwBWz0kL4XBgBEcArVU+1tu6rhOPWsm+CEcxf3WwjCYHdemp5MffC1hWvzgffVWuuFb7Y7ICCCVjaNQ8jgbtJ4HzoFW3vpocRJk7nJiWzTNwXbzqLfreApPEI5ADQqpBczJw23oDG42MiFTurdIXKghzgHo79tDG6ezGRWCkiutcWPu7mgYbWX6og966IboMAOh7aO4zBJY77xkDNYT1YWcrKF3P6Chk7roaGEUJGtZsz/osKzT+XSVdmgOKeQt2fawFlEd7DWAnoDrJwcOWq4NGobR46llQ8YJHHjObS5wzr/ktLvoURDNzTi3RjE4N3nQZvOu57GDcrQ7bkz4if+KNShnkvKg+4DAryB6sSvFaIAtkZmDN1Jf3EgO9eVAKmgGm3AVLzzKsI5NWVIbYqs4Ixp6tFeQ6WF5ad9oeyTVWlov7cDvQclgq0ineO7vgpS5VfqgJQZ6cb92kBg=
-before_script:
-- docker pull myorg/myimage || true
-script:
-- docker build --pull --cache-from gtesei/hello_travis --tag gtesei/hello_travis .
-- docker run gtesei/hello_travis
-after_script:
-- docker images
-before_deploy:
-- docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
-deploy:
-  provider: script
-  script: docker push gtesei/hello_travis
-  on:
-    branch: master
-```
-
-## For each commit on master branch Travis CI builds a new Docker image ...   
-
-![Travis CI](./img/trav_1.PNG)
-
-![Travis CI](./img/trav_2.PNG)
-
-## ... and pushes it on Docker Hub (or different Docker Registry)
-
 ![Docker Hub](./img/dock_1.PNG)
 
 ## Useful links  
