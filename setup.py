@@ -31,7 +31,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'hello = python-dev-docker-project.__main__:main',
+            'hello = python_dev_docker_project.__main__:main',
         ]
     }
 )
