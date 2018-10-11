@@ -2,7 +2,7 @@
 
 [![Build Status](https://api.travis-ci.org/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV.svg?branch=master)](https://travis-ci.org/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV)
 [![Pypi Package version](https://img.shields.io/pypi/v/python-dev-docker-project.svg)](https://pypi.org/project/python-dev-docker-project)
-[![Coverage Status](https://coveralls.io/repos/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV/badge.svg?branch=master&service=github)](https://coveralls.io/github/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV/badge.svg?branch=master)](https://coveralls.io/github/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV?branch=master)
 
 ![Conceptual Schema](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV/master/img/end-to-end-flow.png)
 
