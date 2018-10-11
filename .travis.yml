@@ -12,8 +12,12 @@ python:
 cache: pip
 before_install:
     - sudo apt-get update
-install: pip install -r requirements-dev.txt
+install: 
+    - pip install -r requirements-dev.txt
+    - pip install coverage coveralls 
 script: pytest
+after_success:
+    - coveralls
 deploy:
   provider: pypi
   user: gtesei
