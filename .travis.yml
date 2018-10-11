@@ -14,8 +14,9 @@ before_install:
     - sudo apt-get update
 install: 
     - pip install -r requirements-dev.txt
-    - pip install coverage coveralls 
-script: pytest
+    - pip install pytest pytest-cov
+    - pip install coveralls
+script: py.test
 after_success:
     - coveralls
 deploy:
