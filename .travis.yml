@@ -10,10 +10,8 @@ language: python
 python:
     - "3.6"
 cache: pip
-- before_install:
+before_install:
     - sudo apt-get update
-- before_script:
-    - docker pull "${IMAGE_NAME}:develop" || true
 install: pip install -r requirements-dev.txt
 script: pytest
 deploy:
@@ -25,6 +23,7 @@ deploy:
   on:
     tags: true
 after_deploy: 
+  - docker pull "${IMAGE_NAME}:develop" || true
   - docker build --pull --cache-from "${IMAGE_NAME}:develop" --tag "$IMAGE_NAME" .
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
   - git_sha="$(git rev-parse --short HEAD)"
