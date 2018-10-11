@@ -8,9 +8,9 @@ __The “Docker repo” pattern__: _create two separate Git repositories: one fo
 
 This repository is an example of the __Git repository for software development__. 
 
-Specifically, we assume that the team uses some different branches and a certain point a pull-request for the master branch is necessary. After committing the master branch:
-- before the commit, it is necessary modify the version number into _setup.py_ so that a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case) 
-- on Travis CI a new job is created __pytest__ tests are performed
+Specifically, we assume that the team uses some different branches and a certain point a pull-request for merge the master branch is necessary. After committing the master branch:
+- before the commit, it is necessary to modify the version number in _setup.py_ so that a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case) 
+- on Travis CI a new job is created and __pytest__ tests are performed
 - if tests are successful 
     - a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case)
     - a two new docker development images will be released on the Docker Registry ([Docker Hub](https://hub.docker.com) in our case) 
