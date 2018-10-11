@@ -8,7 +8,7 @@
 
 __The “Docker repo” pattern__: _create two separate Git repositories: one for Docker release and another for software development. This keeps the Docker-specific code isolated from the actual software. Developers can continue working on the source software as usual, while the production Docker image is developed separately_
 
-This repository is an example of the __Git repository for software development__. 
+This repository is an example of the __Git repository for software development__. For an example of Git repository for Docker release, see [Patterns for Continuous Integration with Docker using Travis CI 2 - Prod. Repo](https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_PROD). 
 
 Specifically, we assume that the team uses some different branches and a certain point a pull-request for merge the master branch is necessary. After committing the master branch:
 - before the commit, it is necessary to modify the version number in _setup.py_ so that a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case) 
