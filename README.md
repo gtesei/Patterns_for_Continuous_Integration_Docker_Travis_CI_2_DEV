@@ -74,7 +74,7 @@ deploy:
 
 ![Docker Hub](./img/dock_1.PNG)
 
-## Useful links  
+## Useful links   
 
 [Ruby Installer for Windows](https://rubyinstaller.org/downloads/)
 
