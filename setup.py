@@ -12,7 +12,7 @@ def read(*parts):  # Stolen from txacme
 
 setup(
     name='python-dev-docker-project',
-    version='0.1.7.dev',
+    version='0.1.8.dev',
     license='BSD-3-Clause',
     url='https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV',
     description='',
@@ -22,10 +22,6 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
     packages=find_packages(),
