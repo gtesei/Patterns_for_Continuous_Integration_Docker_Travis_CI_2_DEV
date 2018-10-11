@@ -1,9 +1,0 @@
-[paths]
-source =
-   python_dev_docker_project
-
-[report]
-include =
-    python_dev_docker_project/*
-omit =
-    */tests/*	
