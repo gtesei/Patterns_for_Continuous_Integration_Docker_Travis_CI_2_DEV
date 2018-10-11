@@ -12,8 +12,9 @@ This repository is an example of the __Git repository for software development__
 
 Specifically, we assume that the team uses some different branches and a certain point a pull-request for merge the master branch is necessary. After committing the master branch:
 - before the commit, it is necessary to modify the version number in _setup.py_ so that a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case) 
-- on Travis CI a new job is created and __pytest__ tests are performed
+- on Travis CI a new job is created and __py.test__ tests are performed __measuring code coverage of Python code__.
 - if tests are successful 
+    - code coverage stats are published on [coveralls.io](https://coveralls.io/) through [coveralls](https://pypi.org/project/coveralls/)
     - a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case)
     - a two new docker development images will be released on the Docker Registry ([Docker Hub](https://hub.docker.com) in our case) 
 
@@ -46,8 +47,13 @@ python:
 cache: pip
 before_install:
     - sudo apt-get update
-install: pip install -r requirements-dev.txt
-script: pytest
+install: 
+    - pip install -r requirements-dev.txt
+    - pip install pytest pytest-cov
+    - pip install coveralls
+script: py.test --doctest-modules --cov 
+after_success:
+    - coveralls
 deploy:
   provider: pypi
   user: gtesei
@@ -65,6 +71,14 @@ after_deploy:
   - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${git_sha}-develop"
   - docker push "${IMAGE_NAME}:develop" && docker push "${IMAGE_NAME}:${git_sha}-develop"
 ```
+
+## Travis CI 
+
+![Travis CI](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV/master/img/travis.PNG)
+
+## Coveralls 
+
+![Coveralls](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV/master/img/Coveralls.PNG)
 
 ## Package repository [PyPI]
 
