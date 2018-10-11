@@ -1,4 +1,4 @@
-sudo: required
+sudo: required 
 services:
 - docker
 env:
@@ -20,8 +20,8 @@ deploy:
   distributions: sdist bdist_wheel
   password:
     secure: As9TKWe41QcMXIZ0lKZ7uYblvMbOrWklUjbtZo16juLvDmQDd2dqseEv+eBuI6ur6mov8P0+8MuyOcnDcmeUT0FXTYnjw2BHQC8diH4YvNfupRv6dJDspy3UfI8koQzTJqRfoz30UoCWKS4uU9RYP3uRU6VDIabmECAtKdi3eROeeb88W9LlWMXeuQPiNZlyWFQnHrekRWfzvuZtsxkj5eRtkfUsXTnChbBru0yulv9xIJPcigvvBE/I2DF6c1KFQbtXQ2h4a1FYJ9/NbbHthtvWWSvotJK0825mhiIiCjQwy+GmsiMf5ofnVs7Fe3E0bJLdX8npPBy1BGZnVN4vd+j74Vl/Dtziy5uqFe9bPgYZk3jOBcfnDWrpAdh1Qmt1D4ZBqD0afShSyyMi0N2+B+R58bMuWj3dzgc4zZp0NjCS/S8Qt6c9Q/bYF58hA9rGKGydoKcfmdC80SUPgbYa3UKnEJo+oxtuhZlNB7A+KqccQmfPHgq/Ra4BR3ImUokhW68GVqCB1378ynNAML4vdhTHWBVRnsG+gvk1slrRsH1yOqBQo5IWMkWO8SD2OGp56u7P96m9Oh1yXhPxfCFp/9K/5IWSJ3DsA+TjieUPJW7jbMamw/CQvIOpv+VEfkorh9Oxijf22qt88/dN5OZ6Az2IAxQwBZI7D9BISnibj/w=
-  on:
-    tags: true
+ on:
+  all_branches: true
 after_deploy: 
   - docker pull "${IMAGE_NAME}:develop" || true
   - docker build --pull --cache-from "${IMAGE_NAME}:develop" --tag "$IMAGE_NAME" .
