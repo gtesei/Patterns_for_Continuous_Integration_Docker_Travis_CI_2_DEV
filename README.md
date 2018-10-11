@@ -16,7 +16,7 @@ Specifically, we assume that the team uses some different branches and a certain
 - if tests are successful 
     - code coverage stats are published on [coveralls.io](https://coveralls.io/) through [coveralls](https://pypi.org/project/coveralls/)
     - a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case)
-    - a two new docker development images will be released on the Docker Registry ([Docker Hub](https://hub.docker.com) in our case) 
+    - two new docker development images will be released, e.g. _e59cbe8-develop_ (image for last commit on master branch) and _develop_ (the official develop image of the project), on the Docker Registry, i.e. [Docker Hub](https://hub.docker.com) in our case 
 
 ## Dockerfile 
  
