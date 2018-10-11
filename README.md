@@ -64,6 +64,14 @@ after_deploy:
   - docker push "${IMAGE_NAME}:develop" && docker push "${IMAGE_NAME}:${git_sha}-develop"
 ```
 
+## Package repository [PyPI]
+
+![PyPI](./img/PyPI.PNG)
+
+## Docker Registry [Docker Hub]
+
+![[Docker Hub](./img/[Docker_Hub.PNG)
+
 ## Useful links   
 
 [Ruby Installer for Windows](https://rubyinstaller.org/downloads/)

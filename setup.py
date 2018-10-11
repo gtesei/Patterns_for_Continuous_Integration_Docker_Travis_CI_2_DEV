@@ -12,7 +12,7 @@ def read(*parts):  # Stolen from txacme
 
 setup(
     name='python-dev-docker-project',
-    version='0.1.9.dev',
+    version='0.2.1.dev0',
     license='BSD-3-Clause',
     url='https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV',
     description='',
