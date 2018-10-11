@@ -70,7 +70,7 @@ after_deploy:
 
 ## Docker Registry [Docker Hub]
 
-![[Docker Hub](./img/[Docker_Hub.PNG)
+![[Docker Hub](./img/Docker_Hub.PNG)
 
 ## Useful links   
 
