@@ -48,6 +48,11 @@ nav:
   - Git repository for Docker release: git_docker.md
 ```
 
+## Read The Docs 
+
+![Read The Docs](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV/master/img/onl_docs.PNG)
+
+
 ## .travis.yml  
 
 ```yml
