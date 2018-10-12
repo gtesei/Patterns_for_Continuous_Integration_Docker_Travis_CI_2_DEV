@@ -43,9 +43,9 @@ site_description: 'Patterns for Continuous Integration with Docker using Travis 
 
 nav:
 - Home: index.md
-- The Repo Pattern: 
-  - Git repository for software development: git_dev.md
-  - Git repository for Docker release: git_docker.md
+- The_Repo_Pattern: 
+  - Git_repository_for_software_development: git_dev.md
+  - Git repository_for_Docker_release: git_docker.md
 ```
 
 ## Read The Docs 
