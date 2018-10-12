@@ -6,4 +6,8 @@ site_description: 'Patterns for Continuous Integration with Docker using Travis 
 
 nav:
 - Home: index.md
-- Readme: readme.md
+- Warm up: warm_up.md
+- The Repo Pattern: 
+  - Git repository for software development: git_dev.md
+  - Git repository for Docker release: git_docker.md
+
