@@ -12,6 +12,7 @@ This repository is an example of the __Git repository for software development__
 
 Team uses different branches for development and, a certain point, pull-requests for merge the master branch are done. For each one of them, committing the master branch:
 - modifying the version number in _setup.py_, a new release will be created on the package repository (e.g. [PyPI](https://pypi.org/)), 
+- modifying [MkDocs](https://www.mkdocs.org/) ```mkdocs.yml``` and Markdown files under ```doc/``` a new documentation is build by [Read The Docs](https://readthedocs.org/) and [published on-line](https://patterns-for-continuous-integration-docker-travis-ci-2-dev.readthedocs.io/en/latest/?badge=latest) for consultation,  
 - Travis CI builds, tests and packages the software by using __py.test__ and __measuring code coverage of Python code__.
 - if such tests are successful: 
     - code coverage stats are published on [coveralls.io](https://coveralls.io/) through [coveralls](https://pypi.org/project/coveralls/),
@@ -28,6 +29,22 @@ WORKDIR /myproject
 RUN pip install -e .
 
 CMD ["myproject", "run"]
+```
+
+## mkdocs.yml 
+
+```yml
+site_name: Patterns for Continuous Integration with Docker using Travis CI 2 - Dev. Repo
+theme: readthedocs
+#docs_dir: sources
+repo_url: https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV
+site_description: 'Patterns for Continuous Integration with Docker using Travis CI'
+
+nav:
+- Home: index.md
+- The Repo Pattern: 
+  - Git repository for software development: git_dev.md
+  - Git repository for Docker release: git_docker.md
 ```
 
 ## .travis.yml  
