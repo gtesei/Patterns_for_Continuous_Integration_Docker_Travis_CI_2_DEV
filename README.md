@@ -10,13 +10,13 @@ __The “Docker repo” pattern__: _create two separate Git repositories: one fo
 
 This repository is an example of the __Git repository for software development__. For an example of Git repository for Docker release, see [Patterns for Continuous Integration with Docker using Travis CI 2 - Prod. Repo](https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_PROD). 
 
-Specifically, we assume that the team uses some different branches and a certain point a pull-request for merge the master branch is necessary. After committing the master branch:
-- before the commit, it is necessary to modify the version number in _setup.py_ so that a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case) 
-- on Travis CI a new job is created and __py.test__ tests are performed __measuring code coverage of Python code__.
-- if tests are successful 
-    - code coverage stats are published on [coveralls.io](https://coveralls.io/) through [coveralls](https://pypi.org/project/coveralls/)
-    - a new release will be created on the package repository ([PyPI](https://pypi.org/) in our case)
-    - two new docker development images will be released, e.g. _e59cbe8-develop_ (image for last commit on master branch) and _develop_ (the official develop image of the project), on the Docker Registry, i.e. [Docker Hub](https://hub.docker.com) in our case 
+Team uses different branches for development and, a certain point, pull-requests for merge the master branch are done. For each one of them, committing the master branch:
+- modifying the version number in _setup.py_, a new release will be created on the package repository (e.g. [PyPI](https://pypi.org/)), 
+- Travis CI builds, tests and packages the software by using __py.test__ and __measuring code coverage of Python code__.
+- if such tests are successful: 
+    - code coverage stats are published on [coveralls.io](https://coveralls.io/) through [coveralls](https://pypi.org/project/coveralls/),
+    - Travis CI does a release of the software by uploading the package to the package repository (e.g. [PyPI](https://pypi.org/)),
+    - Travis CI does two new docker development images, e.g. _e59cbe8-develop_ (image for last commit on master branch) and _develop_ (the official develop image of the project), on the Docker Registry, e.g. [Docker Hub](https://hub.docker.com).
 
 ## Dockerfile 
  
