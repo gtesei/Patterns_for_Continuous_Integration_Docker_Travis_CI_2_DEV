@@ -1,0 +1,12 @@
+site_name: Patterns for Continuous Integration with Docker using Travis CI 2 - Dev. Repo
+theme: readthedocs
+#docs_dir: sources
+repo_url: https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV
+site_description: 'Patterns for Continuous Integration with Docker using Travis CI'
+
+nav:
+- Home: index.md
+- The Repo Pattern: 
+  - Git repository for software development: git_dev.md
+  - Git repository for Docker release: git_docker.md
+
